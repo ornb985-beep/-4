@@ -9,8 +9,6 @@ interface Task {
   done: boolean
 }
 
-let nextId = 3
-
 const initialTasks: Task[] = [
   { id: 1, title: 'Set up the Cloud Agent environment', done: true },
   { id: 2, title: 'Run the app end to end', done: false },
@@ -37,7 +35,10 @@ export default function App() {
   function addTask() {
     const title = draft.trim()
     if (!title) return
-    setTasks((prev) => [...prev, { id: nextId++, title, done: false }])
+    setTasks((prev) => {
+      const id = prev.reduce((max, t) => Math.max(max, t.id), 0) + 1
+      return [...prev, { id, title, done: false }]
+    })
     setDraft('')
   }
 

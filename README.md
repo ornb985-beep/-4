@@ -26,6 +26,8 @@ npm run dev      # start the dev server on http://localhost:5173
 | `npm run preview`   | Preview the production build on port 4173     |
 | `npm run lint`      | Run ESLint                                    |
 | `npm run typecheck` | Type-check without emitting                   |
+| `npm run test`      | Run the Vitest unit tests                     |
+| `npm run test:watch`| Run Vitest in watch mode                      |
 
 ## Cloud Agent environment
 
